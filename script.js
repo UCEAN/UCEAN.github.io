@@ -4,7 +4,7 @@ var errorright = 10;
 var soupp = "我的妈妈最近有些反常，不但偷偷用我的香水穿我的衣服，还老是半夜出去。那天我与她发生了争执，结果不小心把她推倒在地，我上前扶她，却发现自己的双手沾满了鲜血。";
 var story = [
     {
-    text: function (playername) {
+text: function (playername) {
       return playername + "，欢迎来到海龟汤！" + soupp + " 你的任务是解开事情的真相！";
     },
     autoNext: true
@@ -17,8 +17,7 @@ var story = [
             { text: "她可能怀念过去的味道", correct: false },
             { text: "查看汤面", correct: true, action: showSoupptext },
             { text: "回到上一题", correct: false, action: goBack }
-        ]
-    },
+        ]},
     {
     text: "凌晨 2 点，我听到客厅传来响动。透过门缝，我看到妈妈正在喷香水和梳妆",
     choices: [
@@ -39,14 +38,14 @@ var story = [
         { text: "回到上一题", correct: false, action: goBack }
         ]
     },
-    {
+ {
         text: "我上去和妈妈争论，结果不小心把她推倒在地，赶忙上前扶她，她生气的转身就走",
         choices: [
             { text: "自己在房间里生闷气", correct: false },
             { text: "跟上去查看", correct: true },
             { text: "在房间里装监控", correct: false },
             { text: "查看汤面", correct: true, action: showSoupptext },
-            { text: "回到上一题", correct: false, action: goBack }
+         { text: "回到上一题", correct: false, action: goBack }
         ]
     },
     {  text: "最后竟然走到了...墓地？大晚上我不知道母亲为什么会来扫墓",
@@ -66,8 +65,7 @@ var story = [
             { text: "扫墓", correct: true },
             { text: "查看汤面", correct: true, action: showSoupptext },
             { text: "回到上一题", correct: false, action: goBack }
-        ]
-    },
+        ]},
     {text: "墓碑上的名字居然和你同名但刻着——慈母，我感觉",
         choices: [
             { text: "妈妈的身份是伪造的", correct: false },
@@ -76,7 +74,7 @@ var story = [
             { text: "查看汤面", correct: true, action: showSoupptext },
             { text: "回到上一题", correct: false, action: goBack }
         ]
-    },
+ },
     {text: "在月光下，我终于看清墓碑上的照片，那个居然是我的脸！！我感觉",
         choices: [
             { text: "我就是妈妈", correct: true },
@@ -84,7 +82,7 @@ var story = [
             { text: "妈妈和我互换了身份", correct: false },
             { text: "查看汤面", correct: true, action: showSoupptext },
             { text: "回到上一题", correct: false, action: goBack }
-        ]
+    ]
     },
     {text: "突然我感觉周围的环境开始变得扭曲...",
         choices: [
@@ -117,7 +115,7 @@ var story = [
         action: function () {
         var game = document.getElementById('game');
             if (game) {
-            game.classList.remove('cemetery', 'hospital');
+         game.classList.remove('cemetery', 'hospital');
             game.classList.add('mirrorbroken');
             }
         },
@@ -169,7 +167,7 @@ alert('确认要进入剧情吗....我怕你一去不复返');
     var firstpage = document.getElementById('firstpage');
     var game = document.getElementById('game');
     if (firstpage) {
-        firstpage.style.display = 'none';
+      firstpage.style.display = 'none';
     }
     if (game) {
         game.style.display = 'flex';  }
@@ -186,12 +184,12 @@ function errror(message) {
     var errorbadElement = document.getElementById('errorbad');
     if (errorbadElement) {
         errorbadElement.innerHTML = "错误剩余机会: " + errorright;
-    }
+ }
     var errormessageEl = document.getElementById('errormessage');
     if (errormessageEl) {
         errormessageEl.innerHTML = message;
         errormessageEl.style.display = 'block';
-        setTimeout(function () {
+      setTimeout(function () {
             if (errormessageEl) {
               errormessageEl.style.display = 'none';
             }
@@ -248,7 +246,7 @@ function gengxing() {
     function typeWriter() {
         if (i < displayText.length) {
       if (textEl) {
-                textEl.innerHTML += displayText.charAt(i);
+          textEl.innerHTML += displayText.charAt(i);
             }
         i++;
             setTimeout(typeWriter, 30);
