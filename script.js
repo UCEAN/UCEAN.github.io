@@ -192,6 +192,7 @@ var story = [
     }
 ];
 
+
 function showError(message) {
     errorChances--;
     var errorChancesElement = document.getElementById('error-chances');
@@ -253,8 +254,8 @@ function updateScene() {
     var choicesEl = document.getElementById('choices');
     var errorMessageEl = document.getElementById('error-message');
 
-    
-  if (textEl) {
+    // 在更新文本前先清空文本
+    if (textEl) {
         textEl.innerHTML = '';
     }
     if (choicesEl) {
@@ -263,7 +264,7 @@ function updateScene() {
     if (errorMessageEl) {
         errorMessageEl.style.display = 'none';
     }
-    
+
     var displayText = typeof step.text === 'function'? step.text(playerName) : step.text;
     var i = 0;
     function typeWriter() {
@@ -280,7 +281,7 @@ function updateScene() {
                     if (currentStep < story.length) {
                         updateScene();
                     }
-                }, 6000);
+                }, 6000); // 2 秒后跳转，可以根据需要调整时间
             }
             if (step.action) {
                 step.action();
