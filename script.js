@@ -281,7 +281,7 @@ function updateScene() {
                     if (currentStep < story.length) {
                         updateScene();
                     }
-                }, 6000); // 2 秒后跳转，可以根据需要调整时间
+                }, 6000); // 
             }
             if (step.action) {
                 step.action();
