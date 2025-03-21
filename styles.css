@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Microsoft YaHei', sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#welcome-page {
+    background-image: url('images/welcome-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-page {
+    background-image: url('images/room-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mirror-broken {
+    background-image: url('images/mirror_self.jpg')!important;
+}
+
+
+#ending-page {
+    background-image: url('images/ending-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#failure-page {
+    background-image: url('images/failure-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cemetery-bg {
+    background-image: url('images/cemetery.jpg')!important;
+    background-size: cover;
+    background-position: center;
+}
+
+.hospital-bg {
+    background-image: url('images/hospital.jpg')!important;
+    background-size: cover;
+    background-position: center;
+}
+
+/* 容器样式 */
+.game-container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+#story-text {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+
+button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #5d3a00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #7a4d00;
+}
+
+/.hidden {
+    display: none;
+}
+
+
+.error-message {
+    color: #ff4444;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.soup-textbox {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #fff;
+    z-index: 10;
+}
+
+.soup-textbox button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+}
+
+.error-chances {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #fff;
+    z-index: 10;
+}

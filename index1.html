@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>半瓶香水 - 互动游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="welcome-page">
+        <div class="game-container">
+            <h1>欢迎来到《半瓶香水》海龟汤游戏</h1>
+            <p>请输入你的名字开始游戏，记住你只有十次错误的机会</p>
+            <input type="text" id="player-name" placeholder="你的名字">
+            <button id="submitBtn">开始游戏</button>
+        </div>
+    </div>
+    <div id="game-page">
+        <div class="error-chances" id="error-chances">错误剩余机会: 10</div>
+        <div class="game-container">
+            <div id="story-text"></div>
+            <div id="choices"></div>
+            <div id="error-message" class="error-message hidden"></div>
+        </div>
+        <div id="soup-textbox" class="soup-textbox hidden">
+            <button onclick="hideSoupTextbox()">关闭</button>
+            <p id="soup-text">我的妈妈最近有些反常，不但偷偷用我的香水穿我的衣服，还老是半夜出去。那天我实在忍不住向她理论，并发生了争执，结果不小心把她推倒在地，我赶忙上前扶她，却发现自己的双手沾满了鲜血。</p>
+        </div>
+    </div>
+    <div id="ending-page">
+        <div class="game-container">
+            <h2>真相</h2>
+            <p id="truth-content"></p>
+            <button onclick="location.reload()">重新开始</button>
+        </div>
+    </div>
+    <div id="failure-page">
+        <div class="game-container">
+            <h2>任务失败</h2>
+            <p>你已经用完了所有错误机会，你将被困在幻境里。</p>
+            <button onclick="location.reload()">重新开始</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
