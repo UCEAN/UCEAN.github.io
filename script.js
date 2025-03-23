@@ -48,7 +48,7 @@ text: function (playername) {
          { text: "回到上一题", correct: false, action: goBack }
         ]
     },
-    {  text: "最后竟然走到了...墓地？大晚上我不知道母亲为什么会来扫墓",
+    {  text: "最后竟然走到了...墓地？大晚上我不知道母亲为什么会来这里",
         action: function () {
             var game = document.getElementById('game');
             if (game) {
