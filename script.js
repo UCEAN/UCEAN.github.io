@@ -48,7 +48,7 @@ text: function (playername) {
          { text: "回到上一题", correct: false, action: goBack }
         ]
     },
-    {  text: "最后竟然走到了...墓地？大晚上我不知道母亲为什么会来这里",
+    {  text: "最后竟然走到了墓地？大晚上我不知道母亲为什么会来这里",
         action: function () {
             var game = document.getElementById('game');
             if (game) {
@@ -58,7 +58,7 @@ text: function (playername) {
         },
         autoNext: true
     },
-    {text: "妈妈走到墓地上，我觉得她是来",
+    {text: "我觉得她是来",
         choices: [
             { text: "进行秘密交易", correct: false },
             { text: "被鬼魂附身", correct: false },
