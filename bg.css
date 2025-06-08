@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基础响应式设置 */
+html {
+    font-size: 16px; /* 基础字体大小 */
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 返回顶部按钮样式 */
+.back-to-top {
+    position: fixed;
+    right: 5vw;
+    bottom: 5vh;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(172, 128, 33, 0.8); /* 茶色半透明 */
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.back-to-top:hover {
+    background: rgba(139, 69, 19, 1); /* 茶色不透明 */
+    transform: translateY(-5px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+body {
+    background-image: url(./img/bg2.png), url(./img/bg3.png);
+    background-repeat: repeat-y, repeat-y;
+    background-position: center center, center center;
+    background-size: 100%, 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+@media (max-width: 1200px) {
+    body {
+        background-size: 100%, 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: 100%, 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: 100%, 100%;
+    }
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    background-color: #b7a27ae4;
+    font-family: 'FangSong', '仿宋', serif;
+    width: 100%;
+    height: 80px;
+    z-index: 999;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 80px;
+        padding: 0 3vw;
+    }
+}
+
+/* Logo响应式调整 */
+.logo img {
+    height: 80px; /* 与header高度一致 */
+    width: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 80px; /* 与移动端header高度一致 */
+    }
+}
+
+/* 导航栏响应式调整 */
+.navbar {
+    position: relative;
+}
+
+/* 汉堡菜单按钮样式 */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    z-index: 999;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fffff4;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* 汉堡菜单激活状态 */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: clamp(20px, 5vw, 80px);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        gap: clamp(10px, 3vw, 30px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar ul {
+        position: fixed;
+        top: 80px; /* 修改为与header高度一致 */
+        left: 0;
+        right: 0;
+        background-color: #b7a27ae4;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+
+    .navbar ul.active {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.nav-item a {
+    position: relative;
+    text-decoration: none;
+    color: #fffff4;
+    font-size: clamp(16px, 2.5vw, 24px);
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-item a {
+        font-size: clamp(14px, 2vw, 18px);
+    }
+}
+
+.nav-item a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 20px;
+    background-image: url('./img/underline.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: center;
+    transform: translateX(-50%) scaleX(0);
+    filter: drop-shadow(0 0 10px rgba(255, 241, 160, 0.7));
+}
+
+@media (max-width: 768px) {
+    .nav-item a::after {
+        bottom: -10px; /* 调整移动端下划线位置 */
+        width: 24px; /* 调整移动端下划线大小 */
+        height: 15px;
+    }
+}
+
+.nav-item a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* 保持活动状态的样式 */
+.nav-item.active a,
+.nav-item.active a:hover,
+.nav-item.active a::after {
+    color: #fffcee !important;
+    text-shadow: 0 0 10px rgba(255, 241, 160, 0.7), 0 0 20px rgba(255, 215, 0, 0.5) !important;
+}
+
+.nav-item.active a::after {
+    opacity: 1 !important;
+    transform: translateX(-50%) scaleX(1) !important;
+}
+
+/* 面包屑导航响应式调整 */
+.breadcrumb {
+    padding: 20px 0 15px 0;
+    margin: 60px 5vw 0;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb {
+        margin: 0 3vw 0;
+        padding: 15px 0 10px 0;
+        font-size: 12px;
+    }
+}
+
+/* 脚注样式 */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 100px;
+    background-color: #B7A27A;
+}
+
+.social-media img {
+    width: 60px;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+footer p {
+    font-size: 18px;
+    margin-top: 50px;
+    color: #fffcee;
+}
+
+/* 页脚响应式调整 */
+@media (max-width: 768px) {
+    footer {
+        margin-top: 60px;
+        padding: 15px;
+    }
+
+    .social-media img {
+        width: 40px;
+    }
+
+    footer p {
+        font-size: 14px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        margin-top: 40px;
+        padding: 10px;
+    }
+
+    .social-media img {
+        width: 30px;
+    }
+
+    footer p {
+        font-size: 12px;
+        margin-top: 20px;
+    }
+}
+
+.nav-item a:hover {
+    color: #fffcee; /* 淡黄色文字颜色 */
+    text-shadow: 0 0 10px rgba(255, 241, 160, 0.7), 0 0 20px rgba(255, 215, 0, 0.5); /* 添加发光效果 */
+}
+
+.breadcrumb a {
+    color: #999;
+    text-decoration: none;
+    
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: #999;
+}
